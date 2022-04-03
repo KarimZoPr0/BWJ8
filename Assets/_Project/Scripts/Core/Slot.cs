@@ -13,19 +13,27 @@ public class Slot : MonoBehaviour
 
 
 	public MusicElement currentElement;
-	private void OnValidate()
+
+	private void Start()
 	{
-		if (_musicElements != null)
+		SyncSounds();
+	}
+
+	[ContextMenu("SyncSoundsFromElements")]
+	public void SyncSounds()
+	{
+		if (_musicElements == null) return;
+		sound.clips.Clear();
+		
+		if (sound.clips.Count == _musicElements.Count && sound.clips.Count != 0) return;
+	
+		
+		foreach (var musicElement in _musicElements)
 		{
-			foreach (var musicElement in _musicElements)
-			{
-				sound.clips.Add(musicElement.clip);
-			}
+			sound.clips.Add(musicElement.clip);
 		}
 	}
 
-	public bool playableMusic;
-	
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (!other.CompareTag("Musicalnote")) return;
@@ -35,13 +43,10 @@ public class Slot : MonoBehaviour
 		
 		if (!_musicElements.Contains(currentElement))
 		{
-			playableMusic = false;
 			renderer.color = Color.red;
 			return;
 		}
 		
- 
-		playableMusic = true; 
 		renderer.color = Color.green;
 	}
 
@@ -49,7 +54,6 @@ public class Slot : MonoBehaviour
 	{
 		
 		if (!other.CompareTag("Musicalnote")) return;
-		playableMusic = false;
 		currentElement = null;
 		renderer.color = Color.white;
 	}
