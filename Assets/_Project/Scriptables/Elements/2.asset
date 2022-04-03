@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 597ad1c02465778469010ffc02a87309, type: 3}
-  m_Name: HalfNote
+  m_Name: 2
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 5db8dcb59887b164c85e2596348b34f7, type: 3}
+  clip: {fileID: 8300000, guid: e3edd14d2b8574f4ab0fe9a7de9774b2, type: 3}
