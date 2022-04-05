@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,56 +13,87 @@ public class SlotController : MonoBehaviour
     public AudioSource source = new();
     public List<AudioClip> clips = new();
 
-    public UnityEvent EmptySlot;
+    private List<AudioClip> oldClips = new List<AudioClip>();
+    public UnityEvent OnRightSlot;
+    public UnityEvent OnWrongSlot;
+    public UnityEvent OnEmptySlot;
+    public UnityEvent OnSlotComplete;
 
     public Transform pointer;
+    public AudioClip marioClip;
 
     // Update is called once per frame
+    
 
     private void Start()
     {
-	    StartCoroutine(PlayMusic());
+	    foreach (var slot in _slots)
+	    {
+		    oldClips.Add(slot.musicElements[0].clip);
+	    }
+
+	    StartCoroutine(playSound());
     }
 
-    public int index;
-
+    private int index;
     private float _current, _target;
 
     private float duration = 0.5f;
     private float strenght = 0.5f;
-    IEnumerator PlayMusic()
+
+    public int incremental = 0;
+    IEnumerator playSound()
     {
-	    for (index = 0; index < _slots.Count;)
+	    int index = 0;
+	    
+	    while (true)
 	    {
-		    var goalPosition = _slots[index].gameObject.transform.position.x;
-		    pointer.DOShakeRotation(duration, strenght);
-		    pointer.DOShakeScale(duration, strenght);
-		    
-		    pointer.DOMoveX(goalPosition, .4f);
-		    
-		    if (_slots[index].currentElement == null)
+		    if (incremental == _slots.Count - 1)
 		    {
-			    source.PlayOneShot(clips[0]);
+			    if (clips.SequenceEqual(oldClips))
+			    {
+				    OnSlotComplete?.Invoke();
+				    break;
+			    }
+			    
+			    clips.Clear();
+			    
+		    }
+
+		    
+		    incremental = (index++ % _slots.Count);
+
+		    var goalPosition = _slots[incremental].gameObject.transform.position.x;
+		    pointer.DOShakeScale(duration, strenght);
+		    pointer.DOMoveX(goalPosition, .4f);
+
+		    var currentElement = _slots[incremental].currentElement;
+		    if (currentElement == null)
+		    {
+			    source.volume = 0.1f;
+			    source.clip = marioClip;
+			    OnEmptySlot?.Invoke();
 		    }
 		    else
 		    {
-			    source.PlayOneShot(_slots[index].currentElement.clip);
-		    }
-		  
-		    
-		    while (source.isPlaying)
-		    { 
-			   
-			    yield return null;
-		    }
-		    index++;
-		   
-		    if (index == _slots.Count)
-		    { 
-			    index = 0;
-		    }
+			    source.clip = currentElement.clip;
+			    source.volume = 0.6f;
+			    clips.Add(currentElement.clip);
 
+			    if (oldClips[incremental] == _slots[incremental].currentElement.clip)
+			    {
+				    Debug.Log("Right");
+				    OnRightSlot?.Invoke();
+			    }
+			    else
+			    {
+				    Debug.Log("Wrong");
+				    OnWrongSlot?.Invoke();
+			    }
+		    }
+		    
+		    source.Play();
+		    yield return new WaitForSeconds(source.clip.length);
 	    }
-	    
     }
 }

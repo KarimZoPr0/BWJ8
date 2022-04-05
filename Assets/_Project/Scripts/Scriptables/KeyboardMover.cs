@@ -12,36 +12,43 @@ namespace RoboRyanTron.Unite2017.Variables
 {
     public class KeyboardMover : MonoBehaviour
     {
-        [Serializable]
-        public class MoveAxis
-        {
-            public KeyCode Positive;
-            public KeyCode Negative;
 
-            public MoveAxis(KeyCode positive, KeyCode negative)
-            {
-                Positive = positive;
-                Negative = negative;
-            }
-
-            public static implicit operator float(MoveAxis axis)
-            {
-                return (Input.GetKey(axis.Positive)
-                    ? 1.0f : 0.0f) -
-                    (Input.GetKey(axis.Negative)
-                    ? 1.0f : 0.0f);
-            }
-        }
-
-        public FloatVariable MoveRate;
-        public MoveAxis Horizontal = new MoveAxis(KeyCode.D, KeyCode.A);
-        public MoveAxis Vertical = new MoveAxis(KeyCode.W, KeyCode.S);
-
+        public Animator animator;
+        public float speed;
+        private Vector3 movement;
         private void Update()
         {
-            Vector3 moveNormal = new Vector3(Horizontal, Vertical, 0.0f).normalized;
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+            transform.position += movement * Time.deltaTime * speed;
 
-            transform.position += moveNormal*Time.deltaTime*MoveRate.Value;
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+            
+            if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1  || Input.GetAxisRaw("Vertical") == 1  || Input.GetAxisRaw("Vertical") == -1)
+            {
+                animator.SetFloat("LastHorizontal", Input.GetAxisRaw("Horizontal"));
+                animator.SetFloat("LastVertical", Input.GetAxisRaw("Vertical"));
+            }
+            
+            if (movement.x < 0 && !facingRight)
+            {
+                Flip();
+            }
+            if (movement.x > 0 && facingRight)
+            {
+                Flip();
+            }
+            
+        }
+
+        private bool facingRight;
+
+        public void Flip()
+        {
+            facingRight = !facingRight;
+            transform.Rotate(0f, 180f, 0f);
         }
     }
 }

@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class Musician : MonoBehaviour
 {
+    public EvilBlock evilBlock;
+    public List<GameObject> blocks;
     private void Start()
     {
+
         // Perform the action every 3 seconds
-        InvokeRepeating("DoSomething", 5f, 5f);
+       // InvokeRepeating("DoSomething", 5f, 5f);
     }
 
 
