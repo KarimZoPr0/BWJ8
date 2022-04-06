@@ -41,12 +41,18 @@ namespace RoboRyanTron.Unite2017.Elements
 		}
 		public IEnumerator MoveObj()
 		{
-			var direction = Random.insideUnitCircle.normalized;
+			var UpDown = Random.Range(0, 2);
+			
+			var isUsedDirection = UpDown == 1 ? Vector2.up : Vector2.down;
+			
+			var direction = isUsed ? isUsedDirection : Random.insideUnitCircle.normalized;
+
+		
 
 			_rigidbody2D.drag = 0;
 			_rigidbody2D.AddForce(new Vector3(direction.x, direction.y).normalized * cubeSpeed);
 
-			yield return new WaitForSeconds(2f);
+			yield return new WaitForSeconds(1.5f);
 			_rigidbody2D.drag = 20;
 		}
 	}

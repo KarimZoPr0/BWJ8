@@ -16,7 +16,13 @@ public class Projectile : MonoBehaviour
 
 	private void OnBecameInvisible()
 	{
-		Destroy(gameObject);
+		Debug.Log("Invisble");
+		enabled = false;
+	}
+
+	private void OnBecameVisible()
+	{
+		Debug.Log("Visible");
 	}
 
 	public bool canTurn = true;
@@ -29,7 +35,7 @@ public class Projectile : MonoBehaviour
 			StartCoroutine(Rotate());
 		}
 		
-		rigidBody.velocity = transform.up * movementSpeed;
+		rigidBody.velocity = transform.right * movementSpeed;
 	}
 
 
@@ -39,7 +45,7 @@ public class Projectile : MonoBehaviour
 			
 		direction.Normalize();
 
-		float rotateAmount = Vector3.Cross(direction, transform.up).z;
+		float rotateAmount = Vector3.Cross(direction, transform.right).z;
 		rigidBody.angularVelocity = -angleChangingSpeed * rotateAmount;
 
 		yield return new WaitForSeconds(3);
@@ -51,6 +57,6 @@ public class Projectile : MonoBehaviour
 	{
 		if (!other.CompareTag("Player")) return;
 		OnHit?.Invoke();
-		Destroy(gameObject);
+		CinemachineShake.Instance.ShakeCamera(3f,.25f);
 	}
 }

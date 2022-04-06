@@ -40,10 +40,11 @@ public class Slot : MonoBehaviour
 		if (!other.CompareTag("Musicalnote")) return;
 		if (!other.TryGetComponent(out Elemental elemental)) return;
 
-		OnExit?.Invoke();
+		OnEnter?.Invoke();
 		currentElement = elemental.Element;
 		elemental.isUsed = true;
 
+		CinemachineShake.Instance.ShakeCamera(2f,.15f);
 	}
 	
 	private void OnTriggerExit2D(Collider2D other)
@@ -51,7 +52,7 @@ public class Slot : MonoBehaviour
 		if (!other.CompareTag("Musicalnote")) return;
 		if (!other.TryGetComponent(out Elemental elemental)) return;
 
-		OnEnter?.Invoke();
+		OnExit?.Invoke();
 		currentElement = null;
 		elemental.isUsed = false;
 	}
