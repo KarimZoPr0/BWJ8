@@ -14,8 +14,12 @@ namespace RoboRyanTron.Unite2017.Variables
     {
 
         public Animator animator;
+       
+
         public float speed;
         private Vector3 movement;
+
+ 
         private void Update()
         {
             movement.x = Input.GetAxisRaw("Horizontal");
@@ -30,8 +34,11 @@ namespace RoboRyanTron.Unite2017.Variables
             {
                 animator.SetFloat("LastHorizontal", Input.GetAxisRaw("Horizontal"));
                 animator.SetFloat("LastVertical", Input.GetAxisRaw("Vertical"));
+                
             }
-            
+
+           
+
             if (movement.x < 0 && !facingRight)
             {
                 Flip();
