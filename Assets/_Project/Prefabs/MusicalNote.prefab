@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Element: {fileID: 11400000, guid: b6e7c2ba1cf98a444ac4c40ec27f0a83, type: 2}
-  cubeSpeed: 130
+  cubeSpeed: 100
   isUsed: 0
 --- !u!1 &2887265272928657163
 GameObject:

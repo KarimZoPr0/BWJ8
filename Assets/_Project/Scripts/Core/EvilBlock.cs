@@ -16,7 +16,7 @@ public enum Direction
    Right
 }
 
-public class EvilBlock : MonoBehaviour
+public class EvilBlock : MonoBehaviour, ISpawnAble
 {
    public GameObject prefab;
    public List<BoxCollider2D> blocks;
@@ -37,16 +37,13 @@ public class EvilBlock : MonoBehaviour
    {
       if (Input.GetKeyDown(KeyCode.Space))
       {
-         SpawnAtRandomPos();
+         Spawn();
       }
    }
-
-   public void SpawnAtRandomPos()
+   
+   public void Spawn()
    {
-      // Loop throguh the slots and check if it contains the blocks element
-
      
-
       foreach (var block in blocks.Where(x => x.GetComponent<Elemental>().isUsed == false))
       {
          var randomDirection = Random.Range(0, 4);
@@ -67,6 +64,8 @@ public class EvilBlock : MonoBehaviour
          };
 
          var GO = Instantiate(prefab, blockPosition, Quaternion.identity);
+         
+         CinemachineShake.Instance.ShakeCamera(2f,.15f);
          StartCoroutine(DestroyGO());
 
          IEnumerator DestroyGO()

@@ -19,14 +19,12 @@ public class SoundPlayer : MonoBehaviour
     public void PlaySound(int clipID)
     {
         audioSource.clip = clips[clipID];
-        if(audioSource.isActiveAndEnabled)
+        if (!audioSource.isActiveAndEnabled) return;
+        if (randomPitch)
         {
-            if (randomPitch)
-            {
-                float p = Random.Range(-pitchRandom, pitchRandom);
-                audioSource.pitch = pitch + p;
-            }
-            audioSource.Play();
+            var p = Random.Range(-pitchRandom, pitchRandom);
+            audioSource.pitch = pitch + p;
         }
+        audioSource.Play();
     }
 }
