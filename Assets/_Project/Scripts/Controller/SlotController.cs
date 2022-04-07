@@ -20,7 +20,7 @@ public class SlotController : MonoBehaviour
     public UnityEvent OnSlotComplete;
 
     public Transform pointer;
-    public AudioClip marioClip;
+    public List<AudioClip> emptyClips;
 
     // Update is called once per frame
     
@@ -42,9 +42,11 @@ public class SlotController : MonoBehaviour
     private float strenght = 0.5f;
 
     public int incremental = 0;
+    public int emptyIncremental;
     IEnumerator playSound()
     {
 	    int index = 0;
+	    int emptyIndex = 0;
 	    
 	    while (true)
 	    {
@@ -60,8 +62,9 @@ public class SlotController : MonoBehaviour
 			    
 		    }
 
-		    
+
 		    incremental = (index++ % _slots.Count);
+		    emptyIncremental = (emptyIndex++ % emptyClips.Count);
 
 		    var goalPosition = _slots[incremental].gameObject.transform.position.x;
 		    pointer.DOShakeScale(duration, strenght);
@@ -71,7 +74,7 @@ public class SlotController : MonoBehaviour
 		    if (currentElement == null)
 		    {
 			    source.volume = 0.1f;
-			    source.clip = marioClip;
+			    source.clip = emptyClips[emptyIncremental];
 			    OnEmptySlot?.Invoke();
 		    }
 		    else
