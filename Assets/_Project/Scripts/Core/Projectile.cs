@@ -11,6 +11,8 @@ public class Projectile : MonoBehaviour
 	public Rigidbody2D rigidBody;
 	public float angleChangingSpeed;
 	public float movementSpeed;
+	public AudioSource audioSource;
+	public AudioClip damageSFX;
 
 	public UnityEvent OnHit;
 
@@ -57,6 +59,7 @@ public class Projectile : MonoBehaviour
 	{
 		if (!other.CompareTag("Player")) return;
 		OnHit?.Invoke();
+		audioSource.PlayOneShot(damageSFX);
 		CinemachineShake.Instance.ShakeCamera(3f,.25f);
 	}
 }

@@ -14,6 +14,8 @@ public class Slot : MonoBehaviour
 	public UnityEvent OnExit;
 	
 	public MusicElement currentElement;
+	public AudioSource audioSource;
+	public AudioClip audioClip;
 
 
 	private void Start()
@@ -43,6 +45,7 @@ public class Slot : MonoBehaviour
 		OnEnter?.Invoke();
 		currentElement = elemental.Element;
 		elemental.isUsed = true;
+		audioSource.PlayOneShot(audioClip);
 
 		CinemachineShake.Instance.ShakeCamera(2f,.15f);
 	}
