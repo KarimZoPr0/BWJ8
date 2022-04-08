@@ -14,18 +14,25 @@ namespace RoboRyanTron.Unite2017.Variables
     {
 
         public Animator animator;
+        public Rigidbody2D rigidbody2D;
        
 
         public float speed;
         private Vector3 movement;
 
+        public bool isMoving;
+
  
-        private void Update()
+        private void FixedUpdate()
         {
+            
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-            transform.position += movement * Time.deltaTime * speed;
 
+            isMoving = rigidbody2D.velocity.magnitude > 0;
+
+            rigidbody2D.velocity = new Vector2(movement.x, movement.y) * speed;
+            
             animator.SetFloat("Horizontal", movement.x);
             animator.SetFloat("Vertical", movement.y);
             animator.SetFloat("Speed", movement.sqrMagnitude);

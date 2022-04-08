@@ -15,6 +15,7 @@ public class Projectile : MonoBehaviour
 	public AudioClip damageSFX;
 
 	public UnityEvent OnHit;
+	public float knockBack;
 
 	private void OnBecameInvisible()
 	{
@@ -58,8 +59,18 @@ public class Projectile : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (!other.CompareTag("Player")) return;
+
+		Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
+		Vector3 direction = hit.transform.position - transform.position;
+		direction = direction.normalized * knockBack;
+
+		hit.DOMove(hit.transform.position + direction, .5f);
+		hit.velocity = Vector2.zero;
+		
+		Destroy(gameObject);
+		
 		OnHit?.Invoke();
 		audioSource.PlayOneShot(damageSFX);
-		CinemachineShake.Instance.ShakeCamera(3f,.25f);
+		CinemachineShake.Instance.ShakeCamera(5f,.25f);
 	}
 }

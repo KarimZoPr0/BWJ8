@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8753403860859172445}
   - component: {fileID: 5417548350092530111}
   - component: {fileID: 7941626964691442582}
+  - component: {fileID: 1459383764742223849}
+  - component: {fileID: 3365599209605173872}
   m_Layer: 0
   m_Name: EvilNote
   m_TagString: Untagged
@@ -52,6 +54,8 @@ MonoBehaviour:
   rigidBody: {fileID: 8753403860859172445}
   angleChangingSpeed: 200
   movementSpeed: 7
+  audioSource: {fileID: 7941626964691442582}
+  damageSFX: {fileID: 8300000, guid: 3c00d2a9d7ec54444a33ff4763e73aea, type: 3}
   OnHit:
     m_PersistentCalls:
       m_Calls:
@@ -79,6 +83,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  knockBack: 1
   canTurn: 1
 --- !u!50 &8753403860859172445
 Rigidbody2D:
@@ -223,6 +228,44 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1459383764742223849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8753403860859172446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ae0c8bd1f88c944a3039fdfff971a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 7941626964691442582}
+  clips:
+  - {fileID: 8300000, guid: 3c00d2a9d7ec54444a33ff4763e73aea, type: 3}
+  - {fileID: 8300000, guid: 3c0c8b1b50d88a746b92d18bc7fe96a9, type: 3}
+  randomPitch: 0
+  pitchRandom: 0.01
+--- !u!95 &3365599209605173872
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8753403860859172446}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce117b31195de114a8ad4c910578100b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8753403862351692114
 GameObject:
   m_ObjectHideFlags: 0

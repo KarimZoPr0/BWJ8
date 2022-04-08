@@ -7,8 +7,10 @@
 
 using System;
 using System.Collections;
+using RoboRyanTron.Unite2017.Variables;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -24,7 +26,10 @@ namespace RoboRyanTron.Unite2017.Elements
  
 		float directionX;
 		float directionY;
-		
+
+		public UnityEvent OnPush;
+		public UnityEvent OnRelease;
+
 		public bool isUsed;
 
 		private Rigidbody2D _rigidbody2D;
@@ -41,19 +46,33 @@ namespace RoboRyanTron.Unite2017.Elements
 		}
 		public IEnumerator MoveObj()
 		{
-			var UpDown = Random.Range(0, 2);
+			var verticalDir = Random.Range(0, 2);
 			
-			var isUsedDirection = UpDown == 1 ? Vector2.up : Vector2.down;
-			
+			var isUsedDirection = verticalDir == 1 ? Vector2.up : Vector2.down;
 			var direction = isUsed ? isUsedDirection : Random.insideUnitCircle.normalized;
-
-		
-
+			
 			_rigidbody2D.drag = 0;
+			_rigidbody2D.mass = 1;
 			_rigidbody2D.AddForce(new Vector3(direction.x, direction.y).normalized * cubeSpeed);
 
-			yield return new WaitForSeconds(1.5f);
+			yield return new WaitForSeconds(1f);
 			_rigidbody2D.drag = 20;
+			_rigidbody2D.mass = 5;
 		}
+
+		private void OnTriggerEnter2D(Collider2D other)
+		{
+			if(!other.CompareTag("Player")) return;
+			if (other.GetComponent<KeyboardMover>().isMoving == false) return;
+			OnPush?.Invoke();
+		}
+		
+		private void OnTriggerExit2D(Collider2D other)
+		{
+			if(!other.CompareTag("Player")) return;
+			OnRelease?.Invoke();
+		}
+		
+	
 	}
 }

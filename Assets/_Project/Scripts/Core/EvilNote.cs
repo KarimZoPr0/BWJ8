@@ -19,7 +19,7 @@ public class EvilNote : MonoBehaviour
 		   var GO = Instantiate(prefab, transform.position, Quaternion.identity);
 		   GO.target = target;
 
-		   CinemachineShake.Instance.ShakeCamera(2f,.15f);
+		   CinemachineShake.Instance.ShakeCamera(8,.3f);
 	   }
    }
 }
