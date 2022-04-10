@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class Projectile : MonoBehaviour
 {
@@ -19,17 +20,11 @@ public class Projectile : MonoBehaviour
 
 	private void OnBecameInvisible()
 	{
-		Debug.Log("Invisble");
-		enabled = false;
-	}
-
-	private void OnBecameVisible()
-	{
-		Debug.Log("Visible");
+		Debug.Log("IsOut");
 	}
 
 	public bool canTurn = true;
-
+	
 	void FixedUpdate ()
 	{
 		if (target == null) return;
@@ -38,7 +33,7 @@ public class Projectile : MonoBehaviour
 			StartCoroutine(Rotate());
 		}
 		
-		rigidBody.velocity = transform.right * movementSpeed;
+		rigidBody.velocity = -transform.up * movementSpeed;
 	}
 
 
@@ -48,10 +43,10 @@ public class Projectile : MonoBehaviour
 			
 		direction.Normalize();
 
-		float rotateAmount = Vector3.Cross(direction, transform.right).z;
+		float rotateAmount = Vector3.Cross(direction, -transform.up).z;
 		rigidBody.angularVelocity = -angleChangingSpeed * rotateAmount;
 
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(1.5f);
 		canTurn = false;
 		rigidBody.angularVelocity = 0;
 	}
@@ -60,17 +55,18 @@ public class Projectile : MonoBehaviour
 	{
 		if (!other.CompareTag("Player")) return;
 
+		OnHit?.Invoke();
+		
 		Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
 		Vector3 direction = hit.transform.position - transform.position;
 		direction = direction.normalized * knockBack;
 
 		hit.DOMove(hit.transform.position + direction, .5f);
 		hit.velocity = Vector2.zero;
+
+		CinemachineShake.Instance.ShakeCamera(5f,.25f);
 		
 		Destroy(gameObject);
-		
-		OnHit?.Invoke();
-		audioSource.PlayOneShot(damageSFX);
-		CinemachineShake.Instance.ShakeCamera(5f,.25f);
+
 	}
 }

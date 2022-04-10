@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using RoboRyanTron.Unite2017.Elements;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,7 +14,7 @@ public class Slot : MonoBehaviour
 	public UnityEvent OnEnter;
 	public UnityEvent OnExit;
 	
-	public MusicElement currentElement;
+	public Elemental currentElement;
 	public AudioSource audioSource;
 	public AudioClip audioClip;
 
@@ -41,15 +42,16 @@ public class Slot : MonoBehaviour
 	{
 		if (!other.CompareTag("Musicalnote")) return;
 		if (!other.TryGetComponent(out Elemental elemental)) return;
+		if (currentElement == elemental.Element) return;
 
-		OnEnter?.Invoke();
-		currentElement = elemental.Element;
 		elemental.isUsed = true;
+		other.transform.DOMove(transform.position, 1f);
+		OnEnter?.Invoke();
+		currentElement = elemental;		
 		audioSource.PlayOneShot(audioClip);
 
 		CinemachineShake.Instance.ShakeCamera(2f,.15f);
 	}
-	
 	private void OnTriggerExit2D(Collider2D other)
 	{
 		if (!other.CompareTag("Musicalnote")) return;

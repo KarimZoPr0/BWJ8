@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597ad1c02465778469010ffc02a87309, type: 3}
   m_Name: 12
   m_EditorClassIdentifier: 
+  noteSprite: {fileID: 21300000, guid: e4a99382eeb2daa41bbcf6d3ae61da10, type: 3}
   clip: {fileID: 8300000, guid: 8ba24fd8e36035a489d46323469403d2, type: 3}

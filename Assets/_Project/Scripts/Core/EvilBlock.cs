@@ -35,10 +35,6 @@ public class EvilBlock : MonoBehaviour, ISpawnAble
 
    private void Update()
    {
-      if (Input.GetKeyDown(KeyCode.Space))
-      {
-         Spawn();
-      }
    }
    
    public void Spawn()

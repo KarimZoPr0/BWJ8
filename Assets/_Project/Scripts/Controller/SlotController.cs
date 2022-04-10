@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,7 +24,7 @@ public class SlotController : MonoBehaviour
     public List<AudioClip> emptyClips;
 
     // Update is called once per frame
-    
+    public IEnumerator Coroutine;
 
     private void Start()
     {
@@ -32,8 +33,9 @@ public class SlotController : MonoBehaviour
 		    oldClips.Add(slot.musicElements[0].clip);
 	    }
 
-	    StartCoroutine(playSound());
     }
+    
+    
 
     private int index;
     private float _current, _target;
@@ -43,7 +45,18 @@ public class SlotController : MonoBehaviour
 
     public int incremental = 0;
     public int emptyIncremental;
-    IEnumerator playSound()
+
+    public void StartCoroutine()
+    {
+	    StartCoroutine(Coroutine);
+    }
+    
+    public void StopCoroutine()
+    {
+	    StopCoroutine(Coroutine);
+    }
+    
+    public IEnumerator playSound()
     {
 	    int index = 0;
 	    int emptyIndex = 0;
@@ -67,10 +80,9 @@ public class SlotController : MonoBehaviour
 		    emptyIncremental = (emptyIndex++ % emptyClips.Count);
 
 		    var goalPosition = _slots[incremental].gameObject.transform.position.x;
-		    pointer.DOShakeScale(duration, strenght);
 		    pointer.DOMoveX(goalPosition, .4f);
 
-		    var currentElement = _slots[incremental].currentElement;
+		    var currentElement = _slots[incremental].currentElement.Element;
 		    if (currentElement == null)
 		    {
 			    source.volume = 0.1f;
@@ -83,7 +95,7 @@ public class SlotController : MonoBehaviour
 			    source.volume = 0.6f;
 			    clips.Add(currentElement.clip);
 
-			    if (oldClips[incremental] == _slots[incremental].currentElement.clip)
+			    if (oldClips[incremental] == currentElement.clip)
 			    {
 				    Debug.Log("Right");
 				    OnRightSlot?.Invoke();

@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fde5951c218ed8146858f4910ae75a61, type: 3}
-  m_Name: LoadLevel
+  m_Name: HitSound
   m_EditorClassIdentifier: 
   debug: 0
