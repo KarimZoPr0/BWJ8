@@ -7,7 +7,7 @@ public class SceneTransitor : MonoBehaviour {
 	public static bool restart;
 	private       int  targetScene;
 	public Animation loadScreen;
-
+	public GameObject holder;
 
 	private void Awake()
 	{
@@ -15,6 +15,8 @@ public class SceneTransitor : MonoBehaviour {
 	}
 
 	private void Start() {
+		holder.SetActive(true);
+		
 		LoadScreen("Out_In");
 	}
 

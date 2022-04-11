@@ -12,12 +12,7 @@ public class loadNextLevel : MonoBehaviour
         currentLevel = SceneManager.GetActiveScene().buildIndex;
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void LoadLevel()
     {
@@ -31,6 +26,11 @@ public class loadNextLevel : MonoBehaviour
     IEnumerator delay()
     {
         yield return new WaitForSeconds(5);
-        SceneManager.LoadScene(currentLevel, LoadSceneMode.Single);
+        Reference.transitor.LoadScene(currentLevel);
+    }
+
+    public void ReloadScene()
+    {
+        Reference.transitor.ReloadScene();
     }
 }
