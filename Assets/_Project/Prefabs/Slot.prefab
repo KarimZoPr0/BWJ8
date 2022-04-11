@@ -136,8 +136,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   currentElement: {fileID: 0}
-  audioSource: {fileID: 4361262392167288613}
-  audioClip: {fileID: 8300000, guid: c4131c3508a418949b23662a0138e073, type: 3}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
 --- !u!114 &4361262392167288612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,3 +263,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccda9c5f4a5dcf6458949b2b1abcbf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slot: {fileID: 4361262392167288610}
+  duration: 1

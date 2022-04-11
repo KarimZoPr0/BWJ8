@@ -8,5 +8,6 @@ using UnityEngine.UIElements;
 public class MusicElement : ScriptableObject
 {
 	[Tooltip("The sound that will be played")]
+	public Sprite noteSprite;
 	public AudioClip clip;
 }
