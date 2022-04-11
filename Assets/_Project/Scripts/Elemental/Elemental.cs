@@ -17,7 +17,7 @@ using Random = UnityEngine.Random;
 
 namespace RoboRyanTron.Unite2017.Elements
 {
-	public class Elemental : MonoBehaviour
+	public class Elemental : MonoBehaviour, ISerializationCallbackReceiver
 	{
 		
 		[Tooltip("Element represented by this elemental.")]
@@ -46,8 +46,8 @@ namespace RoboRyanTron.Unite2017.Elements
 		public void ShakeNote()
 		{
 			const float duration = .5f;
-			const float strenght = .6f;
-			transform.DOShakeScale(duration, strenght, 7, 90f, true);
+			const float strenght = .5f;
+			transform.DOShakeScale(duration, strenght, 10, 90f, true);
 
 		}
 
@@ -84,7 +84,17 @@ namespace RoboRyanTron.Unite2017.Elements
 			if(!other.CompareTag("Player")) return;
 			OnRelease?.Invoke();
 		}
-		
+
+
+		public void OnBeforeSerialize()
+		{
+			SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+			if (Element != null && spriteRenderer != null)
+			{
+				spriteRenderer.sprite = Element.noteSprite;
+			}
+		}
+
 		public void OnAfterDeserialize()
 		{
 		}

@@ -23,14 +23,16 @@ public class MusicPlayer : MonoBehaviour
     public int iterationIndex = -1;
     private float playbackLength;
     public UnityEvent OnRightSlot;
-    public UnityEvent onWrongSlot;
+    public UnityEvent OnWrongSlot;
     public UnityEvent OnEmptySlot;
     public UnityEvent OnSlotComplete;
     public UnityEvent OnEvilMusican;
     public UnityEvent OnGoodMusician;
-    public UnityEvent OnStopLoop;
     
     private IEnumerator Coroutine;
+    private void Update()
+    {
+    }
 
     public void StartSlotMusic()
     {
@@ -41,7 +43,6 @@ public class MusicPlayer : MonoBehaviour
     {
         ResetMusic();
         StopCoroutine(Coroutine);
-        OnStopLoop?.Invoke();
     }
 
     private void ResetMusic()
@@ -54,7 +55,6 @@ public class MusicPlayer : MonoBehaviour
         iterationIndex = -1;
         speaker.timeSamples = 0;
         slider.value = 0;
-        playingClips.Clear();
     }
 
     // Start is called before the first frame update
@@ -74,6 +74,7 @@ public class MusicPlayer : MonoBehaviour
         speaker.Stop(); //Make the speaker stop incase something turned it on at start.
 
         Coroutine = playMusic();
+        StartCoroutine(Coroutine);
     }
 
     public bool stop;
@@ -126,13 +127,13 @@ public class MusicPlayer : MonoBehaviour
                     speaker.clip = emptyCLips[iterationIndex];
                     playbackLength = speaker.clip.samples;
                     OnEmptySlot?.Invoke();
-
                 }
                 else
                 {
                     //If a clip is present, we allocate values of that clip for playback.
                     var currentMusic = currentElement.Element;
                     playbackLength = currentMusic.clip.samples;
+                    speaker.volume = baseVolume;
                     speaker.clip = currentMusic.clip;
                     playingClips.Add(speaker.clip);
                     
@@ -142,7 +143,7 @@ public class MusicPlayer : MonoBehaviour
                     }
                     else
                     {
-                        onWrongSlot?.Invoke();
+                        OnWrongSlot?.Invoke();
                     }
                 }
                 
