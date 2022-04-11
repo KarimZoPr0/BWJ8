@@ -273,18 +273,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 113711023}
-          m_TargetAssemblyTypeName: levelSFX, Assembly-CSharp
-          m_MethodName: playClickSFX
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
     LeftClickReleaseResponse:
       m_PersistentCalls:
         m_Calls: []
@@ -357,7 +345,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a3e03675ef4716b45bf0b2a4ecfff0f5, type: 3}
   - {fileID: 8300000, guid: 8febf8d72279ff74fb1eb21d6d8e5ce2, type: 3}
   - {fileID: 8300000, guid: 3befe0dff217b9f4ca196e114e40a228, type: 3}
-  clickSFX: {fileID: 8300000, guid: 993c317b461921b44b30fc9ca017290b, type: 3}
 --- !u!1 &568014600
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,18 +495,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 568014606}
-          m_TargetAssemblyTypeName: levelSFX, Assembly-CSharp
-          m_MethodName: playClickSFX
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
     LeftClickReleaseResponse:
       m_PersistentCalls:
         m_Calls: []
@@ -592,7 +567,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a3e03675ef4716b45bf0b2a4ecfff0f5, type: 3}
   - {fileID: 8300000, guid: 8febf8d72279ff74fb1eb21d6d8e5ce2, type: 3}
   - {fileID: 8300000, guid: 3befe0dff217b9f4ca196e114e40a228, type: 3}
-  clickSFX: {fileID: 8300000, guid: 993c317b461921b44b30fc9ca017290b, type: 3}
 --- !u!1 &599950323
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,18 +717,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 599950329}
-          m_TargetAssemblyTypeName: levelSFX, Assembly-CSharp
-          m_MethodName: playClickSFX
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
     LeftClickReleaseResponse:
       m_PersistentCalls:
         m_Calls: []
@@ -827,7 +789,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a3e03675ef4716b45bf0b2a4ecfff0f5, type: 3}
   - {fileID: 8300000, guid: 8febf8d72279ff74fb1eb21d6d8e5ce2, type: 3}
   - {fileID: 8300000, guid: 3befe0dff217b9f4ca196e114e40a228, type: 3}
-  clickSFX: {fileID: 8300000, guid: 993c317b461921b44b30fc9ca017290b, type: 3}
 --- !u!1 &650116857
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,18 +939,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 650116863}
-          m_TargetAssemblyTypeName: levelSFX, Assembly-CSharp
-          m_MethodName: playClickSFX
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
     LeftClickReleaseResponse:
       m_PersistentCalls:
         m_Calls: []
@@ -1062,7 +1011,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a3e03675ef4716b45bf0b2a4ecfff0f5, type: 3}
   - {fileID: 8300000, guid: 8febf8d72279ff74fb1eb21d6d8e5ce2, type: 3}
   - {fileID: 8300000, guid: 3befe0dff217b9f4ca196e114e40a228, type: 3}
-  clickSFX: {fileID: 8300000, guid: 993c317b461921b44b30fc9ca017290b, type: 3}
 --- !u!1 &825083748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,18 +1806,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1675536341}
-          m_TargetAssemblyTypeName: levelSFX, Assembly-CSharp
-          m_MethodName: playClickSFX
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
     LeftClickReleaseResponse:
       m_PersistentCalls:
         m_Calls: []
@@ -1942,7 +1878,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a3e03675ef4716b45bf0b2a4ecfff0f5, type: 3}
   - {fileID: 8300000, guid: 8febf8d72279ff74fb1eb21d6d8e5ce2, type: 3}
   - {fileID: 8300000, guid: 3befe0dff217b9f4ca196e114e40a228, type: 3}
-  clickSFX: {fileID: 8300000, guid: 993c317b461921b44b30fc9ca017290b, type: 3}
 --- !u!1 &1692866202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,18 +2028,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1692866208}
-          m_TargetAssemblyTypeName: levelSFX, Assembly-CSharp
-          m_MethodName: playClickSFX
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
     LeftClickReleaseResponse:
       m_PersistentCalls:
         m_Calls: []
@@ -2177,7 +2100,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a3e03675ef4716b45bf0b2a4ecfff0f5, type: 3}
   - {fileID: 8300000, guid: 8febf8d72279ff74fb1eb21d6d8e5ce2, type: 3}
   - {fileID: 8300000, guid: 3befe0dff217b9f4ca196e114e40a228, type: 3}
-  clickSFX: {fileID: 8300000, guid: 993c317b461921b44b30fc9ca017290b, type: 3}
 --- !u!1 &1745747260
 GameObject:
   m_ObjectHideFlags: 0
