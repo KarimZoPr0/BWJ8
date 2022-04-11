@@ -9,9 +9,21 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/Karim/MainMenu.unity
     guid: 2747b7cc38dc94f409d03b70925020bd
   - enabled: 1
-    path: Assets/_Project/Scenes/Karim/Level1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/_Project/Scenes/Demo Levels/Level1v2.unity
+    guid: 9c39350c9677af044a7958e11df592a2
   - enabled: 1
-    path: Assets/_Project/Scenes/Music.unity
-    guid: dccdf43d4199c3e49815c71de37a96a4
+    path: Assets/_Project/Scenes/Demo Levels/Level2v2.unity
+    guid: 6e274a3db6bfa8f46a7a42bd07e34143
+  - enabled: 1
+    path: Assets/_Project/Scenes/Demo Levels/Level3v2.unity
+    guid: 2278cfc5829829442a560ec82ea52b32
+  - enabled: 1
+    path: Assets/_Project/Scenes/Demo Levels/Level4v2.unity
+    guid: 42e1e2b2ee6cdab4e843c7cf0a1352b2
+  - enabled: 1
+    path: Assets/_Project/Scenes/Demo Levels/Level5v2.unity
+    guid: f5d3ea7b7351acd4abba5e9522586d99
+  - enabled: 1
+    path: Assets/_Project/Scenes/Demo Levels/Level6v2.unity
+    guid: 3a968abf5411188469233cb8b0fd4239
   m_configObjects: {}

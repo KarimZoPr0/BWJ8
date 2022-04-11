@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Levels : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Levels : MonoBehaviour
 
 	public void LoadLevel()
 	{
+		//sceneNum = SceneManager.GetActiveScene().buildIndex + 1;
 		Reference.transitor.LoadScene(sceneNum);
+		//SceneManager.LoadScene(sceneNum, LoadSceneMode.Single);
 	}
 }
