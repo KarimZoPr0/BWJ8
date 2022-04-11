@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/Karim/MainMenu.unity
     guid: 2747b7cc38dc94f409d03b70925020bd
   - enabled: 1
+    path: Assets/_Project/Scenes/Karim/LevelSelector.unity
+    guid: 6dd3f220aafad104b99e00a3fa8b5404
+  - enabled: 1
     path: Assets/_Project/Scenes/Demo Levels/Level1v2.unity
     guid: 9c39350c9677af044a7958e11df592a2
   - enabled: 1
