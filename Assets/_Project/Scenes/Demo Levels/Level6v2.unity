@@ -4489,7 +4489,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1661979375}
           m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: Pause
+          m_MethodName: Stop
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4650,7 +4650,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8ba24fd8e36035a489d46323469403d2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 30f0595229526cd44a811a25a0ffdfe3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -5708,11 +5708,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 818473681948919162, guid: 6a0a0d9268ae0d548bb0a4fe775aac7b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.59219766
+      value: 0.59221005
       objectReference: {fileID: 0}
     - target: {fileID: 818473681948919162, guid: 6a0a0d9268ae0d548bb0a4fe775aac7b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.77535456
+      value: -0.77445334
       objectReference: {fileID: 0}
     - target: {fileID: 818473682390496658, guid: 6a0a0d9268ae0d548bb0a4fe775aac7b, type: 3}
       propertyPath: m_RootOrder

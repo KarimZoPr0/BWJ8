@@ -7,6 +7,7 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace RoboRyanTron.Unite2017.Variables
 {
@@ -54,7 +55,17 @@ namespace RoboRyanTron.Unite2017.Variables
             {
                 Flip();
             }
+
             
+            
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+            }
         }
 
         private bool facingRight;
