@@ -74,6 +74,7 @@ public class MusicPlayer : MonoBehaviour
         speaker.Stop(); //Make the speaker stop incase something turned it on at start.
 
         Coroutine = playMusic();
+        StartCoroutine(Coroutine);
     }
 
     public bool stop;
