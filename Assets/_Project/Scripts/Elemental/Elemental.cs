@@ -46,8 +46,8 @@ namespace RoboRyanTron.Unite2017.Elements
 		public void ShakeNote()
 		{
 			const float duration = .5f;
-			const float strenght = .6f;
-			transform.DOShakeScale(duration, strenght, 7, 90f, true);
+			const float strenght = .5f;
+			transform.DOShakeScale(duration, strenght, 5, 50f, true);
 
 		}
 
