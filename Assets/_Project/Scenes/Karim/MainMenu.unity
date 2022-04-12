@@ -987,9 +987,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9, y: 411}
-  m_SizeDelta: {x: 531.665, y: 259.1934}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 30, y: 327.28082}
+  m_SizeDelta: {x: 593.6454, y: 400.8631}
+  m_Pivot: {x: 0.5, y: 0.4558235}
 --- !u!114 &1098812986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,7 +1023,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game Title
+  m_Text: 'compose
+
+    yourself
+
+'
 --- !u!222 &1098812987
 CanvasRenderer:
   m_ObjectHideFlags: 0

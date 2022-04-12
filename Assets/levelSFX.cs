@@ -7,10 +7,12 @@ public class levelSFX : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip[] audioClips;
 
-    private int clipNo = 0;
+    public AudioClip click;
+
+    private int clipNo;
     void Start()
     {
-        audioSource.clip = audioClips[0];
+        audioSource.clip = audioClips[Random.Range(0, 2)];
     }
 
     // Update is called once per frame
@@ -21,11 +23,13 @@ public class levelSFX : MonoBehaviour
 
     public void mouseEnterSFX()
     {
+        clipNo = Random.Range(0, 2);
         audioSource.PlayOneShot(audioClips[clipNo], .5f);
-        clipNo += 1; 
-        if (clipNo > 2)
-        {
-            clipNo = 0;
-        }
+        
+    }
+
+    public void clickSFX()
+    {
+        audioSource.PlayOneShot(click, .5f);
     }
 }

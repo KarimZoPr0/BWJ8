@@ -8385,7 +8385,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128777434}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9df516d4d3a0e7340a067436f6ccc849, type: 3}
   m_Name: 
@@ -15518,11 +15518,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 818473681948919162, guid: 6a0a0d9268ae0d548bb0a4fe775aac7b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0609653
+      value: 0.5911381
       objectReference: {fileID: 0}
     - target: {fileID: 818473681948919162, guid: 6a0a0d9268ae0d548bb0a4fe775aac7b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8080465
+      value: -0.7440688
+      objectReference: {fileID: 0}
+    - target: {fileID: 818473681948919163, guid: 6a0a0d9268ae0d548bb0a4fe775aac7b, type: 3}
+      propertyPath: m_ShowToolkit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 818473681948919163, guid: 6a0a0d9268ae0d548bb0a4fe775aac7b, type: 3}
+      propertyPath: m_ShowCustomSorter
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 818473682390496658, guid: 6a0a0d9268ae0d548bb0a4fe775aac7b, type: 3}
       propertyPath: m_RootOrder
