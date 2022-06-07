@@ -7,6 +7,7 @@ public class SoundPlayer : MonoBehaviour
     public AudioSource audioSource;
 
     public List<AudioClip> clips = new List<AudioClip>();
+    
 
     public bool randomPitch;
     public float pitchRandom = 0.01f;

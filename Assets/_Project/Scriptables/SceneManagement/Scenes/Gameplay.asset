@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b57f348595828240a122a9ff7dae641, type: 3}
+  m_Name: Gameplay
+  m_EditorClassIdentifier: 
+  staticScenes:
+  - {fileID: 102900000, guid: ef7d184c529f4204b8511344c2a1a62e, type: 3}
+  - {fileID: 102900000, guid: 453c4e5211db2ee449fdc55fc660aa8a, type: 3}
+  - {fileID: 102900000, guid: 3ec43c2517b10e04fb8961395c82ec86, type: 3}

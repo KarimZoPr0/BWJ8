@@ -28,9 +28,4 @@ public class loadNextLevel : MonoBehaviour
         yield return new WaitForSeconds(5);
         Reference.transitor.LoadScene(currentLevel);
     }
-
-    public void ReloadScene()
-    {
-        Reference.transitor.ReloadScene();
-    }
 }

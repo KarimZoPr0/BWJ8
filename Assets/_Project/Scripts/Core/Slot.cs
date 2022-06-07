@@ -44,12 +44,12 @@ public class Slot : MonoBehaviour
 		if (!other.TryGetComponent(out Elemental elemental)) return;
 		if (currentElement == elemental.Element) return;
 
-		elemental.isUsed = true;
 		other.transform.DOMove(transform.position, 1f);
 		OnEnter?.Invoke();
 		currentElement = elemental;		
 		audioSource.PlayOneShot(audioClip);
 
+		if (CinemachineShake.Instance == null) return;
 		CinemachineShake.Instance.ShakeCamera(2f,.15f);
 	}
 	private void OnTriggerExit2D(Collider2D other)
@@ -59,7 +59,6 @@ public class Slot : MonoBehaviour
 
 		OnExit?.Invoke();
 		currentElement = null;
-		elemental.isUsed = false;
 	}
 	
 	

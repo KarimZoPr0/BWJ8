@@ -12,7 +12,7 @@ public class levelSFX : MonoBehaviour
     private int clipNo;
     void Start()
     {
-        audioSource.clip = audioClips[Random.Range(0, 2)];
+        audioSource.clip = audioClips[Random.Range(0, 3)];
     }
 
     // Update is called once per frame
