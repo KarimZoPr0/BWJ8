@@ -10,7 +10,7 @@ public class StartGame : MonoBehaviour
 	public ActiveSceneCollectionSO locationsToLoad;
 	public bool showLoadScreen;
 
-	public void OnPlayButtonPress()
+	public void OnLoadLevel()
 	{
 		onPlayButtonPress.RaiseEvent(locationsToLoad, showLoadScreen);
 	}

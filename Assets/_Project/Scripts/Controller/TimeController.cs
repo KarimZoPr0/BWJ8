@@ -10,8 +10,6 @@ public class TimeController : MonoBehaviour
     public static TimeController instance;
     public TMP_Text timeCounter;
     public int timeLimit;
-    
-    
 
     private TimeSpan timePlaying;
     private bool timeGoing;

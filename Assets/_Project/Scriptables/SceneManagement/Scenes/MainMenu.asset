@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staticSceneCollection: {fileID: 11400000, guid: 567c30224576e294b80488d19f3f2b1d, type: 2}
   activeScenes:
-  - {fileID: 102900000, guid: 2747b7cc38dc94f409d03b70925020bd, type: 3}
+  - sceneAsset: {fileID: 102900000, guid: 2747b7cc38dc94f409d03b70925020bd, type: 3}
+    scenePath: Assets/_Project/Level/Scenes/MainMenu.unity
   shortDescription: 
   finalScenes:
-  - {fileID: 102900000, guid: 2747b7cc38dc94f409d03b70925020bd, type: 3}
+  - sceneAsset: {fileID: 0}
+    scenePath: 
   levelMusic: {fileID: 0}

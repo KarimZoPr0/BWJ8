@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
@@ -58,13 +59,11 @@ public class Projectile : MonoBehaviour
 		OnHit?.Invoke();
 		
 		Rigidbody2D hit = other.GetComponent<Rigidbody2D>();
-		Vector3 direction = hit.transform.position - transform.position;
-		direction = direction.normalized * knockBack;
-
-		hit.DOMove(hit.transform.position + direction, .5f);
+		Vector3 direction = hit.position - rigidBody.position;
+		
+		hit.AddRelativeForce(direction * knockBack);
 		hit.velocity = Vector2.zero;
 
-		CinemachineShake.Instance.ShakeCamera(5f,.25f);
 		
 		Destroy(gameObject);
 

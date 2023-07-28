@@ -10,7 +10,7 @@ public class EvilNote : MonoBehaviour
 	public int count;
 	public bool usePool;
 	public float delay;
-
+	
 	private ObjectPool<Projectile> _pool;
 
 	private void Start()
@@ -44,7 +44,6 @@ public class EvilNote : MonoBehaviour
 		   var GO = usePool ? _pool.Get() : Instantiate(prefab, transform.position, Quaternion.identity);
 		   GO.target = target;
 
-		   CinemachineShake.Instance.ShakeCamera(8,.3f); 
 		   KillProjectile(GO);
 
 		   yield return new WaitForSeconds(delay);

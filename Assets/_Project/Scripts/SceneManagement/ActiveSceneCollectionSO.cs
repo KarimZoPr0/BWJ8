@@ -4,6 +4,8 @@ using System.Linq;
 using _Project.Scripts.SceneManagement;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// This class is a base class which contains what is common to all game scenes (Locations or Menus)
@@ -19,12 +21,11 @@ public class ActiveSceneCollectionSO : ScriptableObject
 	public StaticSceneCollectionSO staticSceneCollection;
 
 	[Header("Information")] 
-	public List<SceneAsset> activeScenes;
+	public List<SceneReference> activeScenes;
 	public string shortDescription;
 	
 	[HideInInspector]
-	public List<SceneAsset> finalScenes = new List<SceneAsset>();
-
+	public List<SceneReference> finalScenes = new();
 	[Header("Audio")]
 	public AudioClip levelMusic;
 	
@@ -49,6 +50,7 @@ public class ActiveSceneCollectionSO : ScriptableObject
 			var difference = staticSceneCollection.staticScenes.Except(finalScenes);
 			finalScenes.AddRange(difference);
 		}
+		
 	}
 	
 }

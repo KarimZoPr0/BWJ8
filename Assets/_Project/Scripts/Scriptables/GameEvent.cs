@@ -6,14 +6,9 @@ using UnityEngine;
 public class GameEvent : ScriptableObject
 {
     private List<GameEventListener> listeners = new List<GameEventListener>();
-    public bool debug;
 
     public void Raise()
     {
-        if (debug)
-        {
-            //Debug.Log(this.name);
-        }
         for (int i = listeners.Count-1;i>=0;i--)
         {
             listeners[i].OnEventRaised();
@@ -22,17 +17,13 @@ public class GameEvent : ScriptableObject
 
     public void RegisterListener(GameEventListener listener)
     {
-        if (!listeners.Contains(listener))
-        {
-            listeners.Add(listener);
-        }
+        if (listeners.Contains(listener)) return;
+        listeners.Add(listener);
     }
 
     public void UnregisterListener(GameEventListener listener)
     {
-        if (listeners.Contains(listener))
-        {
-            listeners.Remove(listener);
-        }
+        if (!listeners.Contains(listener)) return;
+        listeners.Remove(listener);
     }
 }

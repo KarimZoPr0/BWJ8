@@ -14,13 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staticSceneCollection: {fileID: 11400000, guid: 68d4572956561f34cb2b5365a652afa5, type: 2}
   activeScenes:
-  - {fileID: 102900000, guid: 1a4fec960320452448375ec0b7d4c2c6, type: 3}
-  - {fileID: 102900000, guid: e83cf9524fa5fd444a96eb788386b157, type: 3}
+  - sceneAsset: {fileID: 102900000, guid: 1a4fec960320452448375ec0b7d4c2c6, type: 3}
+    scenePath: Assets/_Project/Level/Scenes/Levels/Level3.unity
   shortDescription: 
   finalScenes:
-  - {fileID: 102900000, guid: 1a4fec960320452448375ec0b7d4c2c6, type: 3}
-  - {fileID: 102900000, guid: e83cf9524fa5fd444a96eb788386b157, type: 3}
-  - {fileID: 102900000, guid: ef7d184c529f4204b8511344c2a1a62e, type: 3}
-  - {fileID: 102900000, guid: 453c4e5211db2ee449fdc55fc660aa8a, type: 3}
-  - {fileID: 102900000, guid: 3ec43c2517b10e04fb8961395c82ec86, type: 3}
+  - sceneAsset: {fileID: 102900000, guid: 1a4fec960320452448375ec0b7d4c2c6, type: 3}
+    scenePath: Assets/_Project/Level/Scenes/Levels/Level3.unity
+  - sceneAsset: {fileID: 102900000, guid: 3ec43c2517b10e04fb8961395c82ec86, type: 3}
+    scenePath: Assets/_Project/Level/Scenes/UI.unity
+  - sceneAsset: {fileID: 102900000, guid: ef7d184c529f4204b8511344c2a1a62e, type: 3}
+    scenePath: Assets/_Project/Level/Scenes/Concert.unity
+  - sceneAsset: {fileID: 102900000, guid: 453c4e5211db2ee449fdc55fc660aa8a, type: 3}
+    scenePath: Assets/_Project/Level/Scenes/Core.unity
+  - sceneAsset: {fileID: 102900000, guid: e83cf9524fa5fd444a96eb788386b157, type: 3}
+    scenePath: Assets/_Project/Level/Scenes/Player.unity
   levelMusic: {fileID: 0}

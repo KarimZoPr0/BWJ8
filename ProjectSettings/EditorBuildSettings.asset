@@ -6,8 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Project/Scenes/EndScene.unity
-    guid: 5d80053a2efbb6e48abaee275291299d
+    path: Assets/_Project/Scenes/_BootLoader.unity
+    guid: eb335a3b4728bbc43b03c161e496be64
+  - enabled: 1
+    path: Assets/_Project/Scenes/Concert.unity
+    guid: ef7d184c529f4204b8511344c2a1a62e
+  - enabled: 1
+    path: Assets/_Project/Scenes/Core.unity
+    guid: 453c4e5211db2ee449fdc55fc660aa8a
+  - enabled: 1
+    path: Assets/_Project/Scenes/Player.unity
+    guid: e83cf9524fa5fd444a96eb788386b157
+  - enabled: 1
+    path: Assets/_Project/Scenes/UI.unity
+    guid: 3ec43c2517b10e04fb8961395c82ec86
+  - enabled: 1
+    path: Assets/_Project/Scenes/Levels/LevelSelector.unity
+    guid: 6dd3f220aafad104b99e00a3fa8b5404
+  - enabled: 1
+    path: Assets/_Project/Scenes/MainMenu.unity
+    guid: 2747b7cc38dc94f409d03b70925020bd
   - enabled: 1
     path: Assets/_Project/Scenes/Levels/Level1.unity
     guid: 9c39350c9677af044a7958e11df592a2
@@ -27,24 +45,7 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/Levels/Level6.unity
     guid: a1f287684db3a124dadcad0283acf598
   - enabled: 1
-    path: Assets/_Project/Scenes/Karim/MainMenu.unity
-    guid: 2747b7cc38dc94f409d03b70925020bd
-  - enabled: 1
-    path: Assets/_Project/Scenes/Karim/LevelSelector.unity
-    guid: 6dd3f220aafad104b99e00a3fa8b5404
-  - enabled: 1
-    path: Assets/_Project/Scenes/CompleteScene/_BootLoader.unity
-    guid: eb335a3b4728bbc43b03c161e496be64
-  - enabled: 1
-    path: Assets/_Project/Scenes/CompleteScene/Concert.unity
-    guid: ef7d184c529f4204b8511344c2a1a62e
-  - enabled: 1
-    path: Assets/_Project/Scenes/CompleteScene/Core.unity
-    guid: 453c4e5211db2ee449fdc55fc660aa8a
-  - enabled: 1
-    path: Assets/_Project/Scenes/CompleteScene/Player.unity
-    guid: e83cf9524fa5fd444a96eb788386b157
-  - enabled: 1
-    path: Assets/_Project/Scenes/CompleteScene/UI.unity
-    guid: 3ec43c2517b10e04fb8961395c82ec86
-  m_configObjects: {}
+    path: Assets/_Project/Scenes/EndScene.unity
+    guid: 5d80053a2efbb6e48abaee275291299d
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: b9ec3f78c5cf6134586adfa0452d205e, type: 2}
